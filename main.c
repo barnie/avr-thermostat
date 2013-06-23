@@ -5,10 +5,11 @@
 #include "hd44780/hd44780.h"
 #include "dht11/dht11.h"
 #include "buttons/buttons.h"
+#include "menu/menu.h"
 
 int main() {
 	_delay_ms(1000);
-	lcdInit();
+	/*lcdInit();
 	buttonsInit();
 	char buffer[80];
 	int8_t temperature = 0;
@@ -24,9 +25,9 @@ int main() {
 	int x = 0;
 	int reading_amount = 0;
 	sei();
-
+	*/
 	while(1) {
-		if (reading_amount == 0) {
+/*		if (reading_amount == 0) {
 			cli();
 			humidity = sensorGetHumidity();
 			temperature = sensorGetTemperature();
@@ -48,6 +49,7 @@ int main() {
 			itoa(x, buffer, 10);
 			lcdWriteString(buffer);
 			x++;
-		}
+		} */
+		Menu_Show();
 	}
 }
